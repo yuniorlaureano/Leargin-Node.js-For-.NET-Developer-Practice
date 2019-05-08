@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p>Your user ID is {{ userId }}.</p>
+    <form action="/games">
+      <input type="text" name="word" placeholder="Enter a word to guess..." />
+      <input type="submit">
+    </form>
+  </body>
+</html>
