@@ -7,7 +7,7 @@ $(function() {
     for (var i = 0; i < length; ++i) {
         word.append('<span>_</span>');
     }
-    v
+
     var guessedLetters = [];
     var guessLetter = function(letter) {
         $.post('guesses', { letter: letter })
