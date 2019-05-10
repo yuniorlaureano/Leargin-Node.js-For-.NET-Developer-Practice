@@ -9,6 +9,20 @@ class Game {
         this.setBy = setBy;
         this.word = word;
     }
+
+    positionOf(character) {
+        let position = [];
+        for (let i in this.word) {
+            if (this.word[i] === character.toUpperCase()) {
+                position.push(i);
+            }
+        }
+        return position;
+    }
+
+    remove() {
+        games.splice(games.indexOf(this), 1);
+    }
 }
 
 module.exports.create = (userId, word) => {
@@ -18,3 +32,7 @@ module.exports.create = (userId, word) => {
 };
 
 module.exports.get = (id) => games.find(game => game.id === parseInt(id, 10));
+
+module.exports.createdBy = (userId) => games.filter(game => game.setBy === userId);
+
+module.exports.availableTo = (userId) => games.filter(game => game.setBy !== userId);
